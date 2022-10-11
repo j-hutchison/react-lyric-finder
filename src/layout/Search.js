@@ -1,13 +1,15 @@
 import React from "react";
-import classes from "./Searchbar.module.css";
+import classes from "./Search.module.css";
 import SubmitButton from "../components/ui/SubmitButton";
 
-const Searchbar = () => {
+const Search = () => {
 	return (
 		<header className={`container border ${classes["search"]} rounded`}>
-			<h1 className={classes["search-title"]}>Search For A Song</h1>
+			<h1 className={classes["search-title"]}>
+				<i class="icon-large fa-solid fa-music"></i> Search For A Song
+			</h1>
 			<p className={classes["search-description"]}>
-				Get the lyrics for any track
+				Enter the track name and artist to get lyrics
 			</p>
 			<form className={classes["search-form"]}>
 				<input
@@ -22,4 +24,4 @@ const Searchbar = () => {
 	);
 };
 
-export default Searchbar;
+export default Search;

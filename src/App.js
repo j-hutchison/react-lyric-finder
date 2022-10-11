@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import LogoBanner from "./components/LogoBanner";
-import Searchbar from "./layout/Searchbar";
+import Search from "./layout/Search";
 import MainContent from "./layout/MainContent";
 import "./App.css";
 
@@ -10,7 +10,7 @@ function App() {
 	return (
 		<div className="App">
 			<LogoBanner />
-			<Searchbar />
+			<Search />
 			<MainContent title={mainTitle} />
 		</div>
 	);

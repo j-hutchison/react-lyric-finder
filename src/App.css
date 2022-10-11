@@ -5,6 +5,7 @@
 	---blue-grey: rgb(9, 4, 45);
 	---blue-grey-light: rgba(9, 4, 45, 0.15);
 	--blue: rgb(0, 114, 198);
+	--blue-dark: rgb(0, 99, 169);
 }
 
 /* base styles & title */
@@ -45,6 +46,14 @@ html {
 
 .border {
 	border: 1px solid var(---blue-grey-light);
+}
+
+.icon-small {
+	font-size: 1rem;
+}
+
+.icon-large {
+	font-size: 2.4rem;
 }
 
 /* Global style for banner component */

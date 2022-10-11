@@ -6,6 +6,10 @@
 	width: 100%;
 }
 
-i {
-	font-size: 1rem;
+.view-button:hover,
+.view-button:active {
+	background-color: var(---white);
+	color: var(---blue-grey);
+	transition: all 0.15s;
+	cursor: pointer;
 }

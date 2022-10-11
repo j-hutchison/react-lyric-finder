@@ -4,3 +4,10 @@
 	border: none;
 	padding: 0.75rem 0;
 }
+
+.btn-submit:hover,
+.btn-submit:active {
+	/* background-color: var(--blue-dark); */
+	cursor: pointer;
+	box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.51);
+}
