@@ -1,14 +1,19 @@
 .view-button {
+	display: block;
 	background-color: var(---blue-grey);
+	border: 2px solid var(---blue-grey);
 	color: var(---white);
 	font-size: 1.2rem;
 	padding: 0.5rem;
 	width: 100%;
+	text-align: center;
+	text-decoration: none;
 }
 
 .view-button:hover,
 .view-button:active {
 	background-color: var(---white);
+
 	color: var(---blue-grey);
 	transition: all 0.15s;
 	cursor: pointer;

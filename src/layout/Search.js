@@ -6,7 +6,7 @@ const Search = () => {
 	return (
 		<header className={`container border ${classes["search"]} rounded`}>
 			<h1 className={classes["search-title"]}>
-				<i class="icon-large fa-solid fa-music"></i> Search For A Song
+				<i className="icon-large fa-solid fa-music"></i> Search For A Song
 			</h1>
 			<p className={classes["search-description"]}>
 				Enter the track name and artist to get lyrics

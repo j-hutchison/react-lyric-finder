@@ -4,7 +4,7 @@ import classes from "./SongItemData.module.css";
 const SongItemData = ({ fieldName, fieldValue, icon }) => {
 	return (
 		<div className={classes["song-item-data"]}>
-			<i class={`icon-small fa-solid fa-${icon}`}></i>{" "}
+			<i className={`icon-small fa-solid fa-${icon}`}></i>{" "}
 			<strong>{fieldName}: </strong> {fieldValue}
 		</div>
 	);
