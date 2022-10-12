@@ -1,0 +1,66 @@
+.tracks {
+	display: flex;
+	flex-direction: column;
+	gap: 4rem;
+
+	font-size: 1.2rem;
+}
+
+.track-content > :not(:last-child) {
+	margin-bottom: 2rem;
+}
+
+.back-button {
+	display: inline-block;
+	background-color: var(---blue-grey);
+	border: 2px solid var(---blue-grey);
+	color: var(---white);
+	font-size: 1.2rem;
+	padding: 0.5rem;
+	text-align: center;
+	text-decoration: none;
+	margin-bottom: 4rem;
+}
+
+.back-button:hover,
+.back-button:active {
+	background-color: var(---white);
+
+	color: var(---blue-grey);
+	transition: all 0.15s;
+	cursor: pointer;
+}
+
+.track-content-table {
+}
+.table-header-row {
+	display: block;
+	width: 100%;
+
+	padding: 0.5rem;
+}
+
+.border-bottom {
+	border-bottom: 1px solid var(---blue-grey-light);
+}
+
+.table-header-row strong {
+}
+.table-row {
+	display: block;
+	padding: 0.5rem;
+}
+
+.track-lyrics {
+	display: block;
+	border: none;
+	text-align: center;
+	white-space: pre-line;
+}
+
+.track-content-table > :not(:last-child) {
+	border-bottom: 1px solid var(---blue-grey-light);
+}
+
+.table-row strong {
+}

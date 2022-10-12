@@ -26,9 +26,7 @@ const MainContent = ({ title }) => {
 	return (
 		<main className={`container ${classes["main-content"]}`}>
 			<h2 className={classes["main-title"]}>{title}</h2>
-			{typeof results === "string" && (
-				<p className={classes["loading-text"]}>{results}</p>
-			)}
+			{typeof results === "string" && <p className="loading-text">{results}</p>}
 			<div className={classes["song-grid"]}>
 				{Array.isArray(results) > 0 &&
 					results.map((result) => {
