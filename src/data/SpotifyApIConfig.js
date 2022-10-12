@@ -70,6 +70,9 @@ const getTrackById = async (id) => {
 };
 
 const searchForTrack = async (searchTerm) => {
+	console.log(`Function entered SearchForTrack`);
+	console.log(`SearchTerm: ${searchTerm}`);
+
 	const response = await fetch(
 		`https://spotify23.p.rapidapi.com/search/?q=${encodeURIComponent(
 			searchTerm
@@ -78,13 +81,16 @@ const searchForTrack = async (searchTerm) => {
 	);
 
 	if (!response.ok) {
-		return `An error occurred when searching for a track using the search term: ${searchTerm}`;
+		return {
+			success: "false",
+			message: `An error occurred when searching for a track using the search term: ${searchTerm}`,
+		};
 	}
 
 	const data = await response.json();
 	console.log(data);
 
-	return data;
+	return { success: true, data: data.tracks.items[0].data };
 };
 
 export { getTop10, getTrackById, searchForTrack };
