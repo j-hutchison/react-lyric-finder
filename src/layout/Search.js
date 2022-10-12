@@ -1,10 +1,12 @@
-import React, { useRef } from "react";
+import React, { useRef, useContext } from "react";
 import classes from "./Search.module.css";
 import SubmitButton from "../components/ui/SubmitButton";
 import { searchForTrack } from "../data/SpotifyApIConfig";
-import { useParams, useNavigate, useLocation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { SearchContext } from "../context/ContextProvider";
 
 const Search = () => {
+	const searchCtx = useContext(SearchContext);
 	const searchTerm = useRef("");
 	const navigate = useNavigate();
 
@@ -19,7 +21,8 @@ const Search = () => {
 			return;
 		}
 
-		navigate(`/tracks/${response.data.id}`);
+		searchCtx.setTitle("Search Results");
+		searchCtx.setResults(response.data);
 	};
 
 	return (

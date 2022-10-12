@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import LogoBanner from "./components/LogoBanner";
 import Search from "./layout/Search";
 import MainContent from "./layout/MainContent";
+import { ContextProvider } from "./context/ContextProvider";
 import "./App.css";
 
 function App() {
@@ -9,9 +10,11 @@ function App() {
 
 	return (
 		<div className="App">
-			<LogoBanner />
-			<Search />
-			<MainContent title={mainTitle} />
+			<ContextProvider>
+				<LogoBanner />
+				<Search />
+				<MainContent title={mainTitle} />
+			</ContextProvider>
 		</div>
 	);
 }

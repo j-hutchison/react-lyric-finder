@@ -1,35 +1,34 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import classes from "./MainContent.module.css";
 import SongResult from "../components/SongResult";
 import { getTop10 } from "../data/SpotifyApIConfig";
+import { SearchContext } from "../context/ContextProvider";
 
 const MainContent = ({ title }) => {
-	const songs = [
-		{ artist: "Eminem", track: "Without Me", album: "The Eminem Show" },
-		{ artist: "Michael Jackson", track: "Bad", album: "Bad" },
-		{ artist: "Tupac", track: "Changes", album: "Greatest Hits" },
-	];
-	const [results, setResults] = useState("Loading...");
+	// const [results, setResults] = useState("Loading...");
+	const searchCtx = useContext(SearchContext);
 
 	useEffect(() => {
 		const getTopTracks = async () => {
 			const response = await getTop10();
 			if (!response.ok) {
-				setResults(() => "Error Occurred getting top tracks");
+				searchCtx.setResults(() => "Error Occurred getting top tracks");
 			}
 
-			setResults(() => response);
+			searchCtx.setResults(() => response);
 		};
 		getTopTracks();
 	}, []);
 
 	return (
 		<main className={`container ${classes["main-content"]}`}>
-			<h2 className={classes["main-title"]}>{title}</h2>
-			{typeof results === "string" && <p className="loading-text">{results}</p>}
+			<h2 className={classes["main-title"]}>{searchCtx.title}</h2>
+			{typeof results === "string" && (
+				<p className="loading-text">{searchCtx.results}</p>
+			)}
 			<div className={classes["song-grid"]}>
-				{Array.isArray(results) > 0 &&
-					results.map((result) => {
+				{Array.isArray(searchCtx.results) > 0 &&
+					searchCtx.results.map((result) => {
 						return (
 							<SongResult
 								key={result.id}

@@ -76,7 +76,7 @@ const searchForTrack = async (searchTerm) => {
 	const response = await fetch(
 		`https://spotify23.p.rapidapi.com/search/?q=${encodeURIComponent(
 			searchTerm
-		)}&type=tracks&offset=0&limit=1&numberOfTopResults=1`,
+		)}&type=tracks&offset=0&limit=10&numberOfTopResults=10`,
 		options
 	);
 
@@ -90,7 +90,16 @@ const searchForTrack = async (searchTerm) => {
 	const data = await response.json();
 	console.log(data);
 
-	return { success: true, data: data.tracks.items[0].data };
+	const processedTracks = data.tracks.items.map((track) => {
+		return {
+			id: track.data.id,
+			track: track.data.name,
+			artist: track.data.artists.items[0].profile.name,
+			album: track.data.albumOfTrack.name,
+		};
+	});
+
+	return { success: true, data: processedTracks };
 };
 
 export { getTop10, getTrackById, searchForTrack };
