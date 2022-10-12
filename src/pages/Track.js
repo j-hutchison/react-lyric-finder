@@ -3,6 +3,7 @@ import LogoBanner from "../components/LogoBanner";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import classes from "./Track.module.css";
+import LoadingSpinner from "../components/ui/LoadingSpinner";
 
 import { getTrackById } from "../data/SpotifyApIConfig";
 
@@ -41,7 +42,7 @@ const Track = (props) => {
 	return (
 		<div className={classes["tracks"]}>
 			<LogoBanner />
-			{isLoading && <p className="loading-text">Loading...</p>}
+			{isLoading && <LoadingSpinner />}
 			{!isLoading && (
 				<main className={`container ${classes["track-content"]}`}>
 					<Link to={`/`} className={`rounded ${classes["back-button"]}`}>
